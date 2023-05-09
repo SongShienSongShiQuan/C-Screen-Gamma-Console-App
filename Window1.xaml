@@ -1,0 +1,18 @@
+﻿<Window x:Class="Mako_Gamma.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mako_Gamma"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        IsHitTestVisible="False"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"  
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
+        Title="Init_White_Filter" Opacity="0.05" Background="White">
+    <Grid>
+        <Label Content="FILTER INITIALIZED" Opacity="1" Foreground="Red" HorizontalAlignment="Left" Height="36" VerticalAlignment="Top" Width="178" Visibility="Visible" FontSize="20" Background="White" Margin="10,10,0,0"/>
+
+    </Grid>
+</Window>
