@@ -30,10 +30,23 @@ namespace Mako_Gamma
     public partial class MainWindow : Window
     {
         public int iArrayValue_Default_Global;
+        Window1 new_Int_White_Filter = new Window1();
+        public int int_Window1 = 0;
         public static class Global_Variables
         {
             public static int iArrayValue_High = 65535;
-            public static int iArrayValue_Low = 40535;
+            public static int iArrayValue_Low = 35535;
+        }
+        public void Initialize_White_Filter()
+        {
+            if (new_Int_White_Filter.IsVisible == false)
+            {
+                new_Int_White_Filter.Show();
+            }
+            else if (new_Int_White_Filter.IsVisible == true)
+            {
+                new_Int_White_Filter.Visibility = Visibility.Hidden;
+            }    
         }
         public MainWindow()
         {
@@ -112,21 +125,27 @@ namespace Mako_Gamma
             label_a5_sub_1.Text = ("VALUE: " + input_int_gamma);
             int input_int_gamma_to_int = int.Parse(input_int_gamma);
             SetGamma(input_int_gamma_to_int);
-            if (input_int_gamma_to_int > 250)
+            if (input_int_gamma_to_int >= 256)
             {
                 InputIntBox_Gamma.Text = "256";
                 label_a5_sub_1.Text = ("VALUE: " + "256");
                 SetGamma_High(input_int_gamma_to_int);
+                Gamma_add_.Visibility = Visibility.Hidden;
+                Initialize_White_Filter();
+                Gamma_sub_.Visibility = Visibility.Visible;
             }
-            else if (input_int_gamma_to_int < 256)
+            else if (input_int_gamma_to_int < 255)
             {
                 SetGamma(input_int_gamma_to_int);
-                if (input_int_gamma_to_int < 1)
+                Gamma_add_.Visibility = Visibility.Visible;
+                if (input_int_gamma_to_int < 0)
                 {
-                    InputIntBox_Gamma.Text = "1";
-                    label_a5_sub_1.Text = ("VALUE: " + "1");
+                    InputIntBox_Gamma.Text = "0";
+                    label_a5_sub_1.Text = ("VALUE: " + "0");
+                    new_Int_White_Filter.Visibility = Visibility.Hidden;
+                    Gamma_sub_.Visibility = Visibility.Hidden;
                 }
-                else if (input_int_gamma_to_int > 1)
+                else if (input_int_gamma_to_int > 0)
                 {
                     SetGamma(input_int_gamma_to_int);
                 }
@@ -140,21 +159,27 @@ namespace Mako_Gamma
             string add_gamma_value_to_str = add_gamma_value.ToString();
             InputIntBox_Gamma.Text = add_gamma_value_to_str;
             label_a5_sub_1.Text = ("VALUE: " + add_gamma_value_to_str);
-            if (add_gamma_value > 250)
+            if (add_gamma_value >= 256)
             {
                 InputIntBox_Gamma.Text = "256";
                 label_a5_sub_1.Text = ("VALUE: " + "256");
                 SetGamma_High(add_gamma_value);
+                Gamma_add_.Visibility = Visibility.Hidden;
+                Initialize_White_Filter();
+                Gamma_sub_.Visibility = Visibility.Visible;
             }
-            else if (add_gamma_value < 256)
+            else if (add_gamma_value < 255)
             {
                 SetGamma(add_gamma_value);
-                if (add_gamma_value < 1)
+                Gamma_add_.Visibility = Visibility.Visible;
+                if (add_gamma_value < 0)
                 {
-                    InputIntBox_Gamma.Text = "1";
-                    label_a5_sub_1.Text = ("VALUE: " + "1");
+                    InputIntBox_Gamma.Text = "0";
+                    label_a5_sub_1.Text = ("VALUE: " + "0");
+                    new_Int_White_Filter.Visibility = Visibility.Hidden;
+                    Gamma_sub_.Visibility = Visibility.Hidden;
                 }
-                else if (add_gamma_value > 1)
+                else if (add_gamma_value > 0)
                 {
                     SetGamma(add_gamma_value);
                 }
@@ -168,25 +193,40 @@ namespace Mako_Gamma
             string sub_gamma_value_to_str = sub_gamma_value.ToString();
             InputIntBox_Gamma.Text = sub_gamma_value_to_str;
             label_a5_sub_1.Text = ("VALUE: " + sub_gamma_value_to_str);
-            if (sub_gamma_value > 250)
+            if (sub_gamma_value >= 256)
             {
                 InputIntBox_Gamma.Text = "256";
                 label_a5_sub_1.Text = ("VALUE: " + "256");
                 SetGamma_High(sub_gamma_value);
+                Gamma_add_.Visibility = Visibility.Hidden;
+                Initialize_White_Filter();
+                Gamma_sub_.Visibility = Visibility.Visible;
             }
-            else if (sub_gamma_value < 256)
+            else if (sub_gamma_value < 255)
             {
                 SetGamma(sub_gamma_value);
-                if (sub_gamma_value < 1)
+                Gamma_add_.Visibility = Visibility.Visible;
+                if (sub_gamma_value < 0)
                 {
-                    InputIntBox_Gamma.Text = "1";
-                    label_a5_sub_1.Text = ("VALUE: " + "1");
+                    InputIntBox_Gamma.Text = "0";
+                    label_a5_sub_1.Text = ("VALUE: " + "0");
+                    new_Int_White_Filter.Visibility = Visibility.Hidden;
+                    Gamma_sub_.Visibility = Visibility.Hidden;
                 }
-                else if (sub_gamma_value > 1)
+                else if (sub_gamma_value > 0)
                 {
                     SetGamma(sub_gamma_value);
                 }
             }
+        }
+        private void Clean_up_process(object sender, RoutedEventArgs e)
+        {
+            var process_start_w_command = new ProcessStartInfo();
+            process_start_w_command.FileName = "EXIT_PROGRAM.bat";
+            process_start_w_command.UseShellExecute = true;
+            process_start_w_command.RedirectStandardOutput = false;
+            process_start_w_command.CreateNoWindow = false;
+            Process.Start(process_start_w_command);
         }
     }
 }
