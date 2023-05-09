@@ -5,23 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mako_Gamma"
         mc:Ignorable="d"
-        Title="Mako_Gamma" Height="140" Width="180">
+        Title="Mako_Gamma" Height="155" Width="190">
     <Grid HorizontalAlignment="Center" Height="144" VerticalAlignment="Center" Width="300">
         <Grid.Background>
             <ImageBrush ImageSource="/Background file.png" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="100" HorizontalAlignment="Center" Height="96" VerticalAlignment="Top" Width="150" Opacity="0.3" Margin="0,26,0,0"/>
-        <Border BorderBrush="Black" BorderThickness="100" HorizontalAlignment="Center" Height="84" Margin="0,26,0,0" VerticalAlignment="Top" Width="150" Opacity="0.5"/>
-        <Border BorderBrush="Maroon" BorderThickness="100" HorizontalAlignment="Center" Height="2" Margin="0,26,0,0" VerticalAlignment="Top" Width="150" Opacity="0.5"/>
+        <Border BorderBrush="Black" BorderThickness="100" HorizontalAlignment="Center" Height="116" VerticalAlignment="Center" Width="150" Opacity="0.3"/>
+        <Border BorderBrush="Black" BorderThickness="100" HorizontalAlignment="Center" Height="107" Margin="0,15,0,0" VerticalAlignment="Top" Width="150" Opacity="0.5"/>
+        <Border BorderBrush="Maroon" BorderThickness="100" HorizontalAlignment="Center" Height="2" Margin="0,15,0,0" VerticalAlignment="Top" Width="150" Opacity="0.5"/>
 
-        <Button x:Name="Gamma_add_" VerticalAlignment="Top" HorizontalAlignment="Left" Content="+" Click="gamma_add" Width="20" Height="20" Visibility="Visible" Opacity="100" Margin="109,86,0,0" FontFamily="Consolas" FontWeight="Bold"/>
-        <TextBlock x:Name="label_a5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Margin="103,30,0,0" TextWrapping="Wrap" Width="102" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="14" FontWeight="Bold"><Run Language="ja-jp" Text="MONITOR GAMMA"/></TextBlock>
-        <Button x:Name="Gamma_sub_" VerticalAlignment="Top" HorizontalAlignment="Left" Content="-" Click="gamma_sub" Width="20" Height="20" Visibility="Visible" Opacity="100" Margin="177,86,0,0" FontFamily="Consolas" FontWeight="Bold"/>
-        <TextBlock x:Name="label_a5_sub_1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Margin="86,0,0,0" TextWrapping="Wrap" Width="86" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="15" FontWeight="Bold" RenderTransformOrigin="0.878,0.837" Text="VALUE:"/>
-        <TextBox HorizontalAlignment="Left" Height="18" Margin="169,0,0,0" TextWrapping="Wrap" Text="0" x:Name="InputIntBox_Gamma" VerticalAlignment="Center" Width="46" FontFamily="Consolas" FontWeight="Bold" />
-        <Button x:Name="Gamma_attach_value" VerticalAlignment="Top" HorizontalAlignment="Left" Content="SET" Click="gamma_set_value" Width="38" Height="20" Visibility="Visible" Opacity="100" Margin="135,86,0,0" FontFamily="Consolas" FontWeight="Bold"/>
-        <TextBlock x:Name="label_a5_sub_2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Margin="92,44,0,0" TextWrapping="Wrap" Width="124" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="14" FontWeight="Bold"><Run Language="ja-jp" Text="MIN "/><Run Text="1 to 256"/><Run Text=" MAX"/></TextBlock>
-        <TextBlock x:Name="label_a5_sub_3" VerticalAlignment="Top" HorizontalAlignment="Left" Height="10" Margin="77,111,0,0" TextWrapping="Wrap" Width="110" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="10" FontWeight="Bold" Text="ARRAY:"/>
+        <Button x:Name="Gamma_add_" VerticalAlignment="Top" HorizontalAlignment="Left" Content="+" Click="gamma_add" Width="20" Height="20" Visibility="Visible" Opacity="100" Margin="178,75,0,0" FontFamily="Consolas" FontWeight="Bold"/>
+        <TextBlock x:Name="label_a5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Margin="103,19,0,0" TextWrapping="Wrap" Width="102" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="14" FontWeight="Bold"><Run Language="ja-jp" Text="MONITOR GAMMA"/></TextBlock>
+        <Button x:Name="Gamma_sub_" VerticalAlignment="Top" HorizontalAlignment="Left" Content="-" Click="gamma_sub" Width="20" Height="20" Visibility="Visible" Opacity="100" Margin="110,75,0,0" FontFamily="Consolas" FontWeight="Bold"/>
+        <TextBlock x:Name="label_a5_sub_1" VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Margin="86,47,0,0" TextWrapping="Wrap" Width="86" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="15" FontWeight="Bold" RenderTransformOrigin="0.878,0.837" Text="VALUE:"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="165,48,0,0" TextWrapping="Wrap" Text="0" x:Name="InputIntBox_Gamma" VerticalAlignment="Top" Width="46" FontFamily="Consolas" FontWeight="Bold" />
+        <Button x:Name="Gamma_attach_value" VerticalAlignment="Top" HorizontalAlignment="Left" Content="SET" Click="gamma_set_value" Width="38" Height="20" Visibility="Visible" Opacity="100" Margin="135,75,0,0" FontFamily="Consolas" FontWeight="Bold"/>
+        <TextBlock x:Name="label_a5_sub_2" VerticalAlignment="Top" HorizontalAlignment="Left" Height="18" Margin="92,33,0,0" TextWrapping="Wrap" Width="124" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="14" FontWeight="Bold"><Run Language="ja-jp" Text="MIN "/><Run Text="1 to 256"/><Run Text=" MAX"/></TextBlock>
+        <TextBlock x:Name="label_a5_sub_3" VerticalAlignment="Top" HorizontalAlignment="Left" Height="10" Margin="86,60,0,0" TextWrapping="Wrap" Width="110" IsEnabled="True" Visibility="Visible" Foreground="White" FontFamily="Consolas" FontSize="10" FontWeight="Bold" Text="ARRAY:"/>
+        <Button x:Name="Gamma_close" VerticalAlignment="Top" HorizontalAlignment="Left" Content="EXIT PROGRAM" Click="Clean_up_process" Width="88" Height="18" Visibility="Visible" Opacity="100" Margin="110,99,0,0" FontFamily="Consolas" FontWeight="Bold" Background="White"/>
     </Grid>
     <!-- <Window.Background>
         <SolidColorBrush Opacity="0.5" Color="Gray"/>
