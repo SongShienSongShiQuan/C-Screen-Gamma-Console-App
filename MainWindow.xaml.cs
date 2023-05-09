@@ -112,6 +112,25 @@ namespace Mako_Gamma
             label_a5_sub_1.Text = ("VALUE: " + input_int_gamma);
             int input_int_gamma_to_int = int.Parse(input_int_gamma);
             SetGamma(input_int_gamma_to_int);
+            if (input_int_gamma_to_int > 250)
+            {
+                InputIntBox_Gamma.Text = "256";
+                label_a5_sub_1.Text = ("VALUE: " + "256");
+                SetGamma_High(input_int_gamma_to_int);
+            }
+            else if (input_int_gamma_to_int < 256)
+            {
+                SetGamma(input_int_gamma_to_int);
+                if (input_int_gamma_to_int < 1)
+                {
+                    InputIntBox_Gamma.Text = "1";
+                    label_a5_sub_1.Text = ("VALUE: " + "1");
+                }
+                else if (input_int_gamma_to_int > 1)
+                {
+                    SetGamma(input_int_gamma_to_int);
+                }
+            }
         }
         public void gamma_add(object sender, RoutedEventArgs e)
         {
